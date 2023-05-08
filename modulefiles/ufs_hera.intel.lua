@@ -2,10 +2,6 @@ help([[
 loads UFS Model prerequisites for Hera/Intel
 ]])
 
-prepend_path("MODULEPATH", "/scratch1/NCEPDEV/nems/role.epic/miniconda3/modulefiles")
-miniconda3_ver=os.getenv("miniconda3_ver") or "4.12.0"
-load(pathJoin("miniconda3", miniconda3_ver))
-
 prepend_path("MODULEPATH", "/contrib/sutils/modulefiles")
 load("sutils")
 
@@ -35,5 +31,8 @@ setenv("CC", "mpiicc")
 setenv("CXX", "mpiicpc")
 setenv("FC", "mpiifort")
 setenv("CMAKE_Platform", "hera.intel")
+
+prepend_path("MODULEPATH", "/scratch2/BMC/ifi/modulefiles")
+try_load("ifi/20230118-intel-2022.1.2")
 
 whatis("Description: UFS build environment")
