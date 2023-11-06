@@ -83,6 +83,7 @@ export DNATS=0
 export TOPOEDITS=ufs.topo_edits_011818.nc
 export MOM6_ALLOW_LANDMASK_CHANGES=True
 export eps_imesh=2.5e-1
+export DIAG_FREQ=`expr $((FHMAX-$FHROT)) \* 3600 / $DT_CICE`
 
 export WAVDOMAIN=global_270k
 export MESH_WAV=mesh.${WAVDOMAIN}.nc
@@ -90,7 +91,7 @@ export MODDEF_WAV=mod_def.exp.${WAVDOMAIN}
 
 export DIAG_TABLE=diag_table_template
 export FIELD_TABLE=field_table_thompson_noaero_tke
-export NEMS_CONFIGURE=nems.configure.cpld_noaero.IN
+export UFS_CONFIGURE=ufs.configure.cpld_noaero.IN
 
 export FV3_RUN=cpld_control_run.IN
 
