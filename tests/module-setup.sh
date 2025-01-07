@@ -47,7 +47,7 @@ elif [[ ${MACHINE_ID} = wcoss2 || ${MACHINE_ID} = acorn ]] ; then
 elif [[ ${MACHINE_ID} = derecho ]] ; then
     # We are on NCAR Derecho
     if ( ! eval module help > /dev/null 2>&1 ) ; then
-        source /usr/share/lmod/lmod/init/bash
+        source /glade/u/apps/derecho/23.09/spack/opt/spack/lmod/8.7.24/gcc/7.5.0/c645/lmod/lmod/init/bash
     fi
     module purge
     
@@ -58,7 +58,14 @@ elif [[ ${MACHINE_ID} = stampede ]] ; then
     fi
     module purge
 
-elif [[ ${MACHINE_ID} = gaea ]] ; then
+elif [[ ${MACHINE_ID} = frontera ]] ; then
+    # We are on TACC Frontera
+    if ( ! eval module help > /dev/null 2>&1 ) ; then
+        source /opt/apps/lmod/lmod/init/bash
+    fi
+    module purge
+
+elif [[ ${MACHINE_ID} = gaeac5 ]] ; then
     # We are on GAEA
     if ( ! eval module help > /dev/null 2>&1 ) ; then
         # We cannot simply load the module command.  The GAEA
@@ -69,7 +76,12 @@ elif [[ ${MACHINE_ID} = gaea ]] ; then
         source /etc/profile
     fi
     module reset
-
+elif [[ ${MACHINE_ID} = gaeac6 ]]; then
+    if ( ! eval module help > /dev/null 2>&1 ) ; then
+        source /opt/cray/pe/lmod/lmod/init/bash
+    fi
+    module reset
+    
 elif [[ ${MACHINE_ID} = expanse ]]; then
     # We are on SDSC Expanse
     if ( ! eval module help > /dev/null 2>&1 ) ; then

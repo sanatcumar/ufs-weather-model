@@ -36,6 +36,7 @@ list(APPEND mom6_src_files
   MOM6/src/core/MOM_continuity_PPM.F90
   MOM6/src/core/MOM_density_integrals.F90
   MOM6/src/core/MOM_dynamics_split_RK2.F90
+  MOM6/src/core/MOM_dynamics_split_RK2b.F90
   MOM6/src/core/MOM_dynamics_unsplit.F90
   MOM6/src/core/MOM_dynamics_unsplit_RK2.F90
   MOM6/src/core/MOM_forcing_type.F90
@@ -59,6 +60,7 @@ list(APPEND mom6_src_files
   MOM6/src/diagnostics/MOM_sum_output.F90
   MOM6/src/diagnostics/MOM_wave_speed.F90
 
+  MOM6/src/equation_of_state/MOM_EOS_base_type.F90
   MOM6/src/equation_of_state/MOM_EOS.F90
   MOM6/src/equation_of_state/MOM_EOS_Jackett06.F90
   MOM6/src/equation_of_state/MOM_EOS_Roquet_SpV.F90
@@ -311,6 +313,10 @@ list(APPEND mom6_nuopc_src_files
   MOM6/config_src/drivers/unit_tests/test_MOM_string_functions.F90
   MOM6/config_src/drivers/unit_tests/test_MOM_EOS.F90
   MOM6/config_src/drivers/timing_tests/time_MOM_EOS.F90
+)
+
+list(APPEND mom6_nuopc_src_files
+  ${PROJECT_SOURCE_DIR}/CDEPS-interface/ufs/cdeps_share/shr_is_restart_fh_mod.F90
 )
 
 list(APPEND mom6_solo_src_files
